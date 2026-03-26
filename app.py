@@ -75,20 +75,9 @@ with st.sidebar:
     st.title("HVAC Comparator")
     st.markdown("---")
 
-    st.subheader("API Configuration")
-    api_key = st.text_input(
-        "NREL API Key",
-        type="password",
-        help="Get a free key at https://developer.nrel.gov/signup/",
-        placeholder="Your NREL API key",
-    )
-    email = st.text_input(
-        "Email (required by NREL)",
-        placeholder="you@example.com",
-        help="Required by the NREL NSRDB API for data download.",
-    )
+    api_key = st.secrets["NREL_API_KEY"]
+    email = st.secrets["NREL_EMAIL"]
 
-    st.markdown("---")
     st.subheader("Location & Weather")
 
     zip_code = st.text_input(
@@ -139,10 +128,6 @@ with st.sidebar:
     if fetch_clicked:
         if not zip_code.strip():
             st.error("Please enter a ZIP code.")
-        elif not api_key.strip():
-            st.error("Please enter your NREL API key.")
-        elif not email.strip():
-            st.error("Please enter your email address.")
         else:
             try:
                 with st.spinner(f"Geocoding ZIP {zip_code}..."):
