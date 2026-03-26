@@ -34,6 +34,24 @@ st.set_page_config(
     page_icon="🌡️",
     layout="wide",
     initial_sidebar_state="expanded",
+    menu_items={
+        "Get help": "https://github.com/elvis-bd",
+        "Report a Bug": "https://github.com/elvis-bd",
+        "About": "HVAC Equipment Comparator by [elvis-bd](https://github.com/elvis-bd)",
+    },
+)
+
+# Hide Codespace link from toolbar menu
+st.markdown(
+    """
+    <style>
+    [data-testid="stMainMenu"] ul li:has(a[href*="codespace"]),
+    [data-testid="stMainMenu"] ul li:has(a[href*="github.dev"]) {
+        display: none !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
 # ── Session state initialization ────────────────────────────────────────────
