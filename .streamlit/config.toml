@@ -1,2 +1,9 @@
 [theme]
 primaryColor = "#1f77b4"
+
+[server]
+enableStaticServing = false
+
+[client]
+showSidebarNavigation = true
+toolbarMode = "viewer"
