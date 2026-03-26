@@ -6,4 +6,4 @@ enableStaticServing = false
 
 [client]
 showSidebarNavigation = true
-toolbarMode = "viewer"
+toolbarMode = "minimal"
